@@ -2,8 +2,6 @@ import streamlit as st
 from PIL import Image
 from io import BytesIO
 import requests
-import easyocr as ocr
-import numpy as np
 import pytesseract
 
 st.set_page_config(page_title="OCR App", page_icon="favicon.png")
