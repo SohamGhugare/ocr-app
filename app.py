@@ -41,6 +41,7 @@ uploaded_image = st.file_uploader(
 
 # Extract button
 button = st.button(label = "Extract")
+button_ingred = st.button(label = "Enter ingredients")
 
 # ingredients = st.text_area('Ingredients list', st.empty())
 
@@ -59,6 +60,7 @@ def read_image(image):
             formatted_result = formatted_result + line.replace('\n', ' ')
         #ingredients = st.text_area('Ingredients list', result)
         ingredients = st.text_area('Ingredients list', formatted_result)
+        button_gpt = st.button(label = "Analyze")
         
 
 # Button click event
@@ -77,7 +79,10 @@ if button:
             read_image(image)
         except:
             st.error("Invalid URL, please try again.")
-    else:
-        ingredients = st.text_area('Enter ingredients here', ' ')
+        
+if button_ingred:
+    ingredients = st.text_area('Enter ingredients here', ' ')
+    button_gpt = st.button(label = "Analyze")
+   
 
 st.caption("Credit to @SohamGhugare for Tesseract/Streamlit project")
