@@ -63,7 +63,7 @@ def read_image(image):
             formatted_result = formatted_result + line.replace('\n', ' ')
         #ingredients = st.text_area('Ingredients list', result)
         #ingredients = st.text_area('Ingredients list', formatted_result)
-        ingredients.text_area('Ingredients here', formatted_result)
+        ingredients.text_area('Ingredients here', formatted_result, key="ingred_text")
         if 'key' not in st.session_state:
             st.session_state['ingred'] = formatted_result
 
@@ -88,7 +88,7 @@ if button:
             st.error("Invalid URL, please try again.")
  
 if button_ingred:
-    ingredients.text_area('Ingredients here', '')
+    ingredients.text_area('Ingredients here', '', key="ingred_text")
     #button_gpt = st.button(label = "Analyze")
 
 
@@ -100,7 +100,7 @@ if ingredients:
 gpt_results = st.empty()
 
 if button_gpt:
-    st.write(st.session_state.ingred)
+    st.write(ingred_text)
     gpt_results.text_area('GPT results', 'gpt stuff')
     
 
