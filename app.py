@@ -39,10 +39,10 @@ elif option == "Upload as URL":
 # Extract button
 button = st.button(label = "Extract")
 
-ingredients = st.text_area
+ingredients = st.text_area('test this')
 
 def read_image(image):
-    with st.spinner("🤖 Extracting text"):
+    with st.spinner("Extracting text"):
         try:
             result = pytesseract.image_to_string(image)
         except:
