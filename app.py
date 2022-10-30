@@ -42,7 +42,7 @@ uploaded_image = st.file_uploader(
 # Extract button
 button = st.button(label = "Extract")
 
-ingredients = st.text_area('Enter ingredients here', ' ')
+ingredients = st.empty()
 button_gpt = st.button(label = "Analyze")
 
 # ingredients = st.text_area('Ingredients list', st.empty())
