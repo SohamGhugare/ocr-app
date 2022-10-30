@@ -65,7 +65,7 @@ def read_image(image):
             formatted_result = formatted_result + line.replace('\n', ' ')
         #ingredients = st.text_area('Ingredients list', result)
         #ingredients = st.text_area('Ingredients list', formatted_result)
-        ingredients.text_area('Ingredients here', formatted_result, key="ingred_text")
+        ingredients = st.text_area('Ingredients here', formatted_result, key="ingred_text")
         if 'key' not in st.session_state:
             st.session_state['ingred'] = formatted_result
 
