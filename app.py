@@ -6,7 +6,7 @@ import pytesseract
 
 st.set_page_config(page_title="OCR App", page_icon="favicon.png")
 st.title("Poison")
-st.subheader("Lablab Hackathon Project`")
+st.subheader("Wendy Edwards Lablab Hackathon Project")
 
 # Hiding menu and footer (Production use only)
 hide_menu_style = """
