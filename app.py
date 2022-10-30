@@ -45,7 +45,6 @@ button_ingred = st.button(label = "Enter manually")
 
 ingredients = st.empty()
 button_gpt = st.empty()
-gpt_results = st.empty()
 
 # ingredients = st.text_area('Ingredients list', st.empty())
 
@@ -89,10 +88,14 @@ if button_ingred:
     ingredients.text_area('Ingredients here', '')
     #button_gpt = st.button(label = "Analyze")
 
+
 if ingredients:
     button_gpt = st.button(label = "Analyze")
-    if button_gpt:
-        gpt_results.text_area('GPT results', 'gpt stuff')
+
+gpt_results = st.empty()
+
+if button_gpt:
+    gpt_results.text_area('GPT results', 'gpt stuff')
     
 
    
