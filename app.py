@@ -83,9 +83,10 @@ if button:
 if button_ingred:
     ingredients = st.text_area('Enter ingredients here', ' ')
     button_gpt = st.button(label = "Analyze")
-    
-if button_gpt:
+    if button_gpt:
     st.write('gpt stuff')
+    
+
    
 
 st.caption("Credit to @SohamGhugare for Tesseract/Streamlit project")
