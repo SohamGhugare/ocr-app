@@ -89,7 +89,7 @@ if button_ingred:
     button_gpt = st.button(label = "Analyze")
  
 if button_gpt:
-    st.write(ingredients)
+    st.write('gpt stuff')
     
 
    
