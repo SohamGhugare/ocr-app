@@ -3,6 +3,7 @@ from PIL import Image
 from io import BytesIO
 import requests
 import pytesseract
+from model import GeneralModel
 
 st.set_page_config(page_title="OCR App", page_icon="favicon.png")
 st.title("Poison")
@@ -16,6 +17,16 @@ hide_menu_style = """
     </style>
 """
 st.markdown(hide_menu_style, unsafe_allow_html=True)
+
+# Creating an object of prediction service
+pred = GeneralModel()
+
+api_key = st.sidebar.text_input("APIkey", type="password")
+# Using the streamlit cache
+@st.cache
+def process_prompt(input):
+
+    return pred.model_prediction(input=input.strip() , api_key=api_key)
 
 
 # Initilizing certain variables to supress not defined error
