@@ -45,6 +45,7 @@ button_ingred = st.button(label = "Enter manually")
 
 ingredients = st.empty()
 button_gpt = st.empty()
+gpt_results = st.empty()
 
 def read_image(image):
     with st.spinner("Extracting text"):
@@ -92,9 +93,7 @@ if button_ingred:
 
 
 
-    
-
-gpt_results = st.empty()
+  
 
 
 
