@@ -44,7 +44,7 @@ button = st.button(label = "Extract")
 button_ingred = st.button(label = "Enter manually")
 
 ingredients = st.empty()
-button_gpt = st.button(label = "Analyze")
+button_gpt = st.empty()
 
 # ingredients = st.text_area('Ingredients list', st.empty())
 
@@ -64,7 +64,7 @@ def read_image(image):
         #ingredients = st.text_area('Ingredients list', result)
         #ingredients = st.text_area('Ingredients list', formatted_result)
         ingredients.text_area('Ingredients here', formatted_result)
-        #button_gpt = st.button(label = "Analyze")
+        button_gpt = st.button(label = "Analyze")
         
 
 # Button click event
@@ -86,6 +86,7 @@ if button:
  
 if button_ingred:
     ingredients.text_area('Ingredients here', '')
+    button_gpt = st.button(label = "Analyze")
  
 if button_gpt:
     st.write(ingredients)
