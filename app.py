@@ -66,11 +66,11 @@ def read_image(image):
         #ingredients = st.text_area('Ingredients list', result)
         #ingredients = st.text_area('Ingredients list', formatted_result)
         ingredients = st.text_area('Ingredients here', formatted_result, key="ingred_text")
-        
-        if 'key' not in st.session_state:
-            st.session_state['ingred'] = formatted_result
 
-        #button_gpt = st.button(label = "Analyze")
+        button_gpt = st.button(label = "Analyze")
+        
+        if button_gpt:
+            gpt_results.text_area('GPT results', 'gpt stuff')
         
 
 # Button click event
@@ -95,16 +95,12 @@ if button_ingred:
     #button_gpt = st.button(label = "Analyze")
 
 
-if ingredients:
 
-    button_gpt = st.button(label = "Analyze")
-    st.write(ingredients)
     
 
 gpt_results = st.empty()
 
-if button_gpt:
-    gpt_results.text_area('GPT results', 'gpt stuff')
+
     
 
    
