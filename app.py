@@ -70,7 +70,7 @@ def read_image(image):
         button_gpt = st.button(label = "Analyze")
         
         if button_gpt:
-            gpt_results.text_area('GPT results', 'gpt stuff')
+            gpt_results.text_area('GPT results', ingredients)
         
 
 # Button click event
