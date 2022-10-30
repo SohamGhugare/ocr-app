@@ -34,14 +34,13 @@ uploaded_image = None
 url = None
 
 uploaded_image = st.file_uploader(
-    label = "Please select a file and click the Extract button. Or if you have no image and want to enter ingredients yourself, just click Extract.",
+    label = "Please select a file and click the Extract button. Or just enter the ingredients manually into the box",
     type = ["png", "jpg", "jpeg"],
     accept_multiple_files=False
 )
 
 # Extract button
 button = st.button(label = "Extract")
-button_ingred = st.button(label = "Enter ingredients")
 
 ingredients = st.text_area('Enter ingredients here', ' ')
 button_gpt = st.button(label = "Analyze")
