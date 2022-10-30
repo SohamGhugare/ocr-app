@@ -43,7 +43,7 @@ def read_image(image):
             return st.error("Could not extract text from image")
         st.write("## Extracted Text: ")
         st.write(result)
-        ingredients = st.text_area('Ingredients list', results)
+        ingredients = st.text_area('Ingredients list', result)
         
 
 # Button click event
