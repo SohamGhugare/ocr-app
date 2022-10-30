@@ -46,10 +46,6 @@ button_ingred = st.button(label = "Enter manually")
 ingredients = st.empty()
 button_gpt = st.empty()
 
-test_ingred = st.text_area('Ingredients list', '')
-
-# ingredients = st.text_area('Ingredients list', st.empty())
-
 def read_image(image):
     with st.spinner("Extracting text"):
         try:
@@ -70,7 +66,7 @@ def read_image(image):
         button_gpt = st.button(label = "Analyze")
         
         if button_gpt:
-            gpt_results.text_area('GPT results', ingredients)
+            gpt_results = st.text_area('GPT results', ingredients)
         
 
 # Button click event
@@ -101,8 +97,5 @@ if button_ingred:
 gpt_results = st.empty()
 
 
-    
-
-   
 
 st.caption("Credit to @SohamGhugare for Tesseract/Streamlit project")
