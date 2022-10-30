@@ -91,10 +91,8 @@ if button_ingred:
 
 if ingredients:
     button_gpt = st.button(label = "Analyze")
-    
-if button_gpt:
-    #st.write('gpt stuff')
-    gpt_results.text_area('GPT results', 'gpt stuff')
+    if button_gpt:
+        gpt_results.text_area('GPT results', 'gpt stuff')
     
 
    
