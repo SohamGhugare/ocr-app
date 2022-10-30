@@ -102,7 +102,7 @@ if ingredients:
 gpt_results = st.empty()
 
 if button_gpt:
-    st.write(test_ingred)
+    st.write(ingredients)
     gpt_results.text_area('GPT results', 'gpt stuff')
     
 
