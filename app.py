@@ -66,6 +66,7 @@ def read_image(image):
         #ingredients = st.text_area('Ingredients list', result)
         #ingredients = st.text_area('Ingredients list', formatted_result)
         ingredients = st.text_area('Ingredients here', formatted_result, key="ingred_text")
+        st.write(ingredients)
         if 'key' not in st.session_state:
             st.session_state['ingred'] = formatted_result
 
@@ -102,7 +103,6 @@ if ingredients:
 gpt_results = st.empty()
 
 if button_gpt:
-    st.write(ingredients)
     gpt_results.text_area('GPT results', 'gpt stuff')
     
 
