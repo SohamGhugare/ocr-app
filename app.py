@@ -5,8 +5,8 @@ import requests
 import pytesseract
 
 st.set_page_config(page_title="OCR App", page_icon="favicon.png")
-st.title("OCR App - Extract Text from Images")
-st.subheader("Optical Character Recognition - Using `pytesseract` & `streamlit`")
+st.title("Poison")
+st.subheader("Lablab Hackathon Project`")
 
 # Hiding menu and footer (Production use only)
 hide_menu_style = """
@@ -17,24 +17,16 @@ hide_menu_style = """
 """
 st.markdown(hide_menu_style, unsafe_allow_html=True)
 
-option = st.radio(
-    label = "Select a mode of upload",
-    options = ("Upload as File", "Upload as URL")
-)
 
 # Initilizing certain variables to supress not defined error
 uploaded_image = None
 url = None
 
-if option == "Upload as File":
-    uploaded_image = st.file_uploader(
-        label = "Please select a file and click the Extract button",
-        type = ["png", "jpg", "jpeg"],
-        accept_multiple_files=False
-    )
-
-elif option == "Upload as URL":
-    url = st.text_input(label = "Please enter an url and click the Extract button")
+uploaded_image = st.file_uploader(
+    label = "Please select a file and click the Extract button",
+    type = ["png", "jpg", "jpeg"],
+    accept_multiple_files=False
+)
 
 # Extract button
 button = st.button(label = "Extract")
@@ -51,6 +43,7 @@ def read_image(image):
             return st.error("Could not extract text from image")
         st.write("## Extracted Text: ")
         st.write(result)
+        ingredients.value = result
         
 
 # Button click event
