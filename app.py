@@ -31,7 +31,7 @@ uploaded_image = st.file_uploader(
 # Extract button
 button = st.button(label = "Extract")
 
-ingredients = st.text_area('Ingredients list', st.empty())
+# ingredients = st.text_area('Ingredients list', st.empty())
 
 def read_image(image):
     with st.spinner("Extracting text"):
