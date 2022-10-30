@@ -45,7 +45,7 @@ def read_image(image):
         # st.write(result)
         formatted_result = ''
         for line in result:
-            formatted_result = formatted_result + line.rstrip()
+            formatted_result = formatted_result + line.replace('\n', ' ')
         #ingredients = st.text_area('Ingredients list', result)
         ingredients = st.text_area('Ingredients list', formatted_result)
         
