@@ -39,6 +39,8 @@ elif option == "Upload as URL":
 # Extract button
 button = st.button(label = "Extract")
 
+ingredients = st.text_area
+
 def read_image(image):
     with st.spinner("🤖 Extracting text"):
         try:
@@ -70,4 +72,4 @@ if button:
     else:
         st.error("Please select an image. ")
 
-st.caption("Made with ❤️ by @SohamGhugare")
+st.caption("Credit to @SohamGhugare")
