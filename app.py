@@ -94,7 +94,7 @@ if ingredients:
     
 if button_gpt:
     #st.write('gpt stuff')
-    gpt_results('GPT results', 'gpt stuff')
+    gpt_results.text_area('GPT results', 'gpt stuff')
     
 
    
