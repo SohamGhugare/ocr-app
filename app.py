@@ -43,6 +43,9 @@ uploaded_image = st.file_uploader(
 button = st.button(label = "Extract")
 button_ingred = st.button(label = "Enter ingredients")
 
+ingredients = st.text_area('Enter ingredients here', ' ')
+button_gpt = st.button(label = "Analyze")
+
 # ingredients = st.text_area('Ingredients list', st.empty())
 
 def read_image(image):
@@ -80,10 +83,8 @@ if button:
         except:
             st.error("Invalid URL, please try again.")
         
-if button_ingred:
-    ingredients = st.text_area('Enter ingredients here', ' ')
-    button_gpt = st.button(label = "Analyze")
-    if button_gpt:
+ 
+if button_gpt:
         st.write('gpt stuff')
     
 
