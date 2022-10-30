@@ -67,6 +67,6 @@ if button:
         except:
             st.error("Invalid URL, please try again.")
     else:
-        ingredients = st.text_area('Enter ingredients here', st.empty())
+        ingredients = st.text_area('Enter ingredients here', ' ')
 
 st.caption("Credit to @SohamGhugare for Tesseract/Streamlit project")
