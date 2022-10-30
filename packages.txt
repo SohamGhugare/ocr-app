@@ -1,1 +1,2 @@
 tesseract-ocr
+libtk8.6
