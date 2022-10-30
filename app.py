@@ -91,6 +91,7 @@ if button_ingred:
 
 if ingredients:
     button_gpt = st.button(label = "Analyze")
+    st.write(ingredients)
 
 gpt_results = st.empty()
 
