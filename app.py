@@ -46,6 +46,8 @@ button_ingred = st.button(label = "Enter manually")
 ingredients = st.empty()
 button_gpt = st.empty()
 
+test_ingred = st.text_area('Ingredients list', '')
+
 # ingredients = st.text_area('Ingredients list', st.empty())
 
 def read_image(image):
