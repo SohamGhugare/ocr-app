@@ -23,7 +23,7 @@ uploaded_image = None
 url = None
 
 uploaded_image = st.file_uploader(
-    label = "Please select a file and click the Extract button",
+    label = "Please select a file and click the Extract button. Or if you have no image and want to enter ingredients yourself, just click Extract.",
     type = ["png", "jpg", "jpeg"],
     accept_multiple_files=False
 )
@@ -67,6 +67,6 @@ if button:
         except:
             st.error("Invalid URL, please try again.")
     else:
-        st.error("Please select an image. ")
+        ingredients = st.text_area('Enter ingredients here', formatted_result)
 
-st.caption("Credit to @SohamGhugare")
+st.caption("Credit to @SohamGhugare for Tesseract/Streamlit project")
