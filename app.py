@@ -41,9 +41,13 @@ def read_image(image):
             return st.error("Could not extract text from image")
         if not result:
             return st.error("Could not extract text from image")
-        st.write("## Extracted Text: ")
-        st.write(result)
-        ingredients = st.text_area('Ingredients list', result)
+        # st.write("## Extracted Text: ")
+        # st.write(result)
+        formatted_result = ''
+        for line in result:
+            formatted_result = formatted_result + line.rstrip()
+        #ingredients = st.text_area('Ingredients list', result)
+        ingredients = st.text_area('Ingredients list', formatted_result)
         
 
 # Button click event
