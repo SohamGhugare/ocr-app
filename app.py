@@ -90,7 +90,7 @@ if button:
             st.error("Invalid URL, please try again.")
  
 if button_ingred:
-    ingredients.text_area('Ingredients here', '', key="ingred_text")
+    ingredients = st.text_area('Ingredients here', '', key="ingred_text")
     #button_gpt = st.button(label = "Analyze")
 
 
