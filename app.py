@@ -86,18 +86,16 @@ if button:
  
 
 if button_gpt:
-    gpt_results = st.text_area('GPT results', ingredients)
     if api_key:
             with st.spinner(text="In progress"):
                 report_text = process_prompt(ingredients)
                 st.markdown(report_text)
-                gpt_results.text_area('GPT results', report_text)
+                gpt_results = st.text_area('GPT results', report_text)
     else:
         st.error("🔑 Please enter API Key")
         
 
-  
-
+ 
 
 
 st.caption("Credit to @SohamGhugare for Tesseract/Streamlit project")
