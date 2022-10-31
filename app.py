@@ -3,10 +3,11 @@ from PIL import Image
 from io import BytesIO
 import requests
 import pytesseract
+from model import GeneralModel
 
 st.set_page_config(page_title="OCR App", page_icon="favicon.png")
-st.title("OCR App - Extract Text from Images")
-st.subheader("Optical Character Recognition - Using `pytesseract` & `streamlit`")
+st.title("Poison")
+st.subheader("Wendy Edwards Lablab Hackathon Project")
 
 # Hiding menu and footer (Production use only)
 hide_menu_style = """
@@ -17,38 +18,53 @@ hide_menu_style = """
 """
 st.markdown(hide_menu_style, unsafe_allow_html=True)
 
-option = st.radio(
-    label = "Select a mode of upload",
-    options = ("Upload as File", "Upload as URL")
-)
+# Creating an object of prediction service
+pred = GeneralModel()
+
+api_key = st.sidebar.text_input("APIkey", type="password")
+# Using the streamlit cache
+@st.cache
+def process_prompt(input):
+
+    return pred.model_prediction(input=input.strip() , api_key=api_key)
+
 
 # Initilizing certain variables to supress not defined error
 uploaded_image = None
 url = None
 
-if option == "Upload as File":
-    uploaded_image = st.file_uploader(
-        label = "Please select a file and click the Extract button",
-        type = ["png", "jpg", "jpeg"],
-        accept_multiple_files=False
-    )
-
-elif option == "Upload as URL":
-    url = st.text_input(label = "Please enter an url and click the Extract button")
+uploaded_image = st.file_uploader(
+    label = "Please select a file and click the Extract button. Or just enter the ingredients manually into the box",
+    type = ["png", "jpg", "jpeg"],
+    accept_multiple_files=False
+)
 
 # Extract button
 button = st.button(label = "Extract")
 
+ingredients = st.empty()
+ingredients = st.text_area('Ingredients here', '', key="ingred_text")
+button_gpt = st.empty()
+button_gpt = st.button(label = "Analyze")
+gpt_results = st.empty()
+
 def read_image(image):
-    with st.spinner("🤖 Extracting text"):
+    with st.spinner("Extracting text"):
         try:
             result = pytesseract.image_to_string(image)
         except:
             return st.error("Could not extract text from image")
         if not result:
             return st.error("Could not extract text from image")
-        st.write("## Extracted Text: ")
-        st.write(result)
+        # st.write("## Extracted Text: ")
+        # st.write(result)
+        formatted_result = ''
+        for line in result:
+            formatted_result = formatted_result + line.replace('\n', ' ')
+        #ingredients = st.text_area('Ingredients list', result)
+        #ingredients = st.text_area('Ingredients list', formatted_result)
+        #ingredients = st.text_area('Ingredients here', formatted_result, key="ingred_text")
+        st.write(formatted_result)
         
 
 # Button click event
@@ -67,7 +83,19 @@ if button:
             read_image(image)
         except:
             st.error("Invalid URL, please try again.")
-    else:
-        st.error("Please select an image. ")
+ 
 
-st.caption("Made with ❤️ by @SohamGhugare")
+if button_gpt:
+    if api_key:
+            with st.spinner(text="In progress"):
+                report_text = process_prompt(ingredients)
+                st.markdown(report_text)
+                gpt_results = st.text_area('GPT results', report_text)
+    else:
+        st.error("🔑 Please enter API Key")
+        
+
+ 
+
+
+st.caption("Credit to @SohamGhugare for Tesseract/Streamlit project")
