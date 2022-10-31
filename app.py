@@ -67,9 +67,6 @@ def read_image(image):
         st.write(formatted_result)
         button_gpt = st.button(label = "Analyze")
         
-        if button_gpt:
-            gpt_results = st.text_area('GPT results', ingredients)
-        
 
 # Button click event
 if button:
@@ -92,7 +89,9 @@ if button_ingred:
     ingredients = st.text_area('Ingredients here', '', key="ingred_text")
     #button_gpt = st.button(label = "Analyze")
 
-
+if button_gpt:
+    gpt_results = st.text_area('GPT results', ingredients)
+        
 
   
 
