@@ -1,6 +1,6 @@
 import openai
 
-poem = """Which of the following in pure form are poisonous to cats or dogs?
+poem = """Which of the following are poisonous to dogs? Why?
 ---
 {input}
 ---
@@ -24,7 +24,7 @@ class GeneralModel:
         # arguments to send the API
         kwargs = {
             "engine": "text-davinci-002",
-            "temperature": 0.85,
+            "temperature": 0.7,
             "max_tokens": 600,
             "best_of": 1,
             "top_p": 1,
