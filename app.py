@@ -88,8 +88,12 @@ if button:
 if button_gpt:
     if api_key:
             with st.spinner(text="In progress"):
-                report_text = process_prompt(ingredients)
-                st.markdown(report_text)
+                ingredients_text = ingredients
+                ingredients_text = ingredients_text.replace(',', ', ')
+                ingredients_text = ingredients_text.replace('  ', ' ')
+                ingredients_text = ingredients_text + '\n\n'
+                report_text = process_prompt(ingredients_text)
+                # st.markdown(report_text)
                 gpt_results = st.text_area('GPT results', report_text)
     else:
         st.error("🔑 Please enter API Key")
