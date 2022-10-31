@@ -7,7 +7,10 @@ from model import GeneralModel
 
 st.set_page_config(page_title="OCR App", page_icon="favicon.png")
 st.title("Poison")
-st.subheader("Wendy Edwards Lablab Hackathon Project")
+st.subheader("Wendy Edwards TesseractOCR / GPT-3 Experiment")
+st.write("""This is pretty rough. The extract will try to extract ingredients from images of food labels. 
+Then you have to copy/paste it into the ingredients box and clean it up as needed. When you've entered
+all your ingredients, click 'Analyze' and GPT-3 will tell you what it thinks is poisonous to dogs. """)
 
 # Hiding menu and footer (Production use only)
 hide_menu_style = """
