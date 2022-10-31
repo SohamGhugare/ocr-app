@@ -41,7 +41,6 @@ uploaded_image = st.file_uploader(
 
 # Extract button
 button = st.button(label = "Extract")
-button_clear = st.button(label = "Clear")
 
 ingredients = st.empty()
 ingredients = st.text_area('Ingredients here', '', key="ingred_text")
@@ -85,10 +84,6 @@ if button:
         except:
             st.error("Invalid URL, please try again.")
  
-if button_clear:
-    ingredients.text_area('Ingredients here', '')
-
-    
 
 if button_gpt:
     gpt_results = st.text_area('GPT results', ingredients)
