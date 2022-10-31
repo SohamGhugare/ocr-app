@@ -44,6 +44,7 @@ button = st.button(label = "Extract")
 button_ingred = st.button(label = "Enter manually")
 
 ingredients = st.empty()
+ingredients = st.text_area('Ingredients here', '', key="ingred_text")
 button_gpt = st.empty()
 gpt_results = st.empty()
 
@@ -62,8 +63,8 @@ def read_image(image):
             formatted_result = formatted_result + line.replace('\n', ' ')
         #ingredients = st.text_area('Ingredients list', result)
         #ingredients = st.text_area('Ingredients list', formatted_result)
-        ingredients = st.text_area('Ingredients here', formatted_result, key="ingred_text")
-
+        #ingredients = st.text_area('Ingredients here', formatted_result, key="ingred_text")
+        st.write(formatted_result)
         button_gpt = st.button(label = "Analyze")
         
         if button_gpt:
