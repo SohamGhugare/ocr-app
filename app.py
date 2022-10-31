@@ -8,7 +8,7 @@ from model import GeneralModel
 st.set_page_config(page_title="OCR App", page_icon="favicon.png")
 st.title("Poison - GPT-3/Tesseract OCR")
 st.subheader("Disclaimer: If you think your pet may have been exposed to poison, contact a professional and not GPT-3")
-st.write("""This is pretty rough. The extract will try to extract ingredients from images of food labels. 
+st.write("""This is pretty rough. This will try to extract ingredients from images of food labels. 
 Then you have to copy/paste it into the ingredients box and clean it up as needed. When you've entered
 all your ingredients, click 'Analyze' and GPT-3 will tell you what it thinks is poisonous to dogs. 
 You may also need to manually clear out the text boxes if you want to run it again. Sorry. """)
